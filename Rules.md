@@ -4,7 +4,7 @@
 
 1. CertaintyPoker can be played by an arbitrary number of __players__. Players are seated around a table. At the beginning of the game, one player is randomly assigned the __anchor__ (in poker this player is called the "dealer") and holds an anchor button indicating this status.
 
-2. Each player has a certain amount of __money__. When the game starts, all player have the same amount of money. During the game, players win and loose money.
+2. Each player has a certain amount of __money__. When the game starts, all players have the same amount of money. During the game, players win and loose money.
 
 3. CertaintyPoker is played in multiple __rounds__.
 
@@ -18,7 +18,7 @@
 
 8. Now the __betting__ begins. Betting means that players put some (or all) of their money in front of them. The betting has the following rules:
 
-    1. Players bet in turns, one after another, starting with the player next to the player who placed the big blind. Only players who are still in the game (i.e. they are not out) participate in the betting.
+    1. Only players who are still in the game participate in the betting. Players bet in turns, one after another, starting with the player next to the player who placed the big blind.
 
     2. Whenever a player puts all their money in front of them, they are said to have gone __all in__.
 
@@ -28,9 +28,9 @@
 
         2. They can __call__. This means that they place the amount of the current maximum bet in front of themselves. If a player is not able to set the maximum bet (because it exceeds the amount of money the player has left), they can call by going all in. In case a player has already set the maximum bet, them calling is called __check__.
 
-        3. They can __raise__. This means that they put more money than current the maximum bet in front of themselves.
+        3. They can __raise__. This means that they put more money than current maximum bet in front of themselves.
 
-9. The __betting is over__ whenever either all players but one have left or have gone all in, or if all players in the round have have checked in a row. After the betting has ended, all money players have placed in front of themselves goes into the pot. [TODO: Explain side pots.]
+9. The __betting is over__ whenever either all players but one have left or have gone all in, or if all players in the round have have checked in a row. After the betting has ended, all money players have placed in front of themselves goes into the pot. If a player has gone all in in that betting, all the money set by players who have already left and all the money that other players have set to call this all-in-bet is put into a side pot. All the money which other player have set (or will set) above this all-in-bet during the course of the round is put into the main pot. If multiple players go all in during one round, multiple side pots might be created.
 
 10. After the betting, a new hint is unveiled to the players, and another betting starts. This procedure repeats, until all the hints of the question have been unveiled.
 
