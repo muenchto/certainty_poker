@@ -2,7 +2,7 @@
 
 *CertaintyPoker is a game about guessing and estimating the quality of one's guess in the face of changing information. These are the rules of the game:*
 
-1. CertaintyPoker can be played by an arbitrary number of players. Players are seated around a table. At the beginning of the game, one player is randomly assigned the "anchor" (in poker this player is called the "dealer") and holds an anchor button indicating this status.
+1. CertaintyPoker can be played by an arbitrary number of __players__. Players are seated around a table. At the beginning of the game, one player is randomly assigned the __anchor__ (in poker this player is called the "dealer") and holds an anchor button indicating this status.
 
 2. Each player has a certain amount of __money__. When the game starts, all player have the same amount of money. During the game, players win and loose money.
 
