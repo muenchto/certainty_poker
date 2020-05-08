@@ -8,9 +8,9 @@
 
 3. CertaintyPoker is played in multiple __rounds__.
 
-4. Each round has one __question__. The __answer__ to a question is always a number. (Typically the answer of the question is unknown to most people, but can be guessed somehow. Examples for such questions are: *How many kilometers highway does Germany have?* Or: *What is the price of 1 kg of (cheapest) salt in a discounter in Paris (in €)?*, *What is the average life expectancy amongst women in Ghana in the year 2018?*)
+4. Each round has one __question__. The __answer__ to a question is always a number. (Typically the answer of the question is unknown to most people, but can be guessed somehow. Examples for such questions are: *How many kilometers highway does Germany have?*, *What is the price of 1 kg of (cheapest) salt in a discounter in Paris (in €)?*, or *What is the average life expectancy amongst women in Ghana in the year 2018?*)
 
-5. Besides the answer, every question also has a number of __hints__. Typically, a hint provides information which make it easier to assess the quality of a guess. Regarding the question of female life expectancy in Ghana from above, hints could be something like: *The overall (both genders) life expectancy in Nigeria in the year 2018 was 53.4 years.* or *The life expectancy of men in Ghana in the year of 2018 was 62.4 years.*  (However, the quality of the hints can differ, and sometimes the hint might not even contain any valuable information at all.)
+5. Besides the answer, every question also has a number of __hints__. (Typically, a hint provides information which make it easier to assess the quality of a guess. Regarding the question of female life expectancy in Ghana from above, hints could be something like: *The overall (both genders) life expectancy in Nigeria in the year 2018 was 53.4 years.* or *The life expectancy of men in Ghana in the year of 2018 was 62.4 years.*  However, the quality of the hints can differ, and sometimes the hint might not even contain any valuable information at all.)
 
 6. At the beginning of each round, the player next to the anchor player has to place a minimum bet called __small blind__. The player next to the small blind has to place a bet double of the small blind, the __big blind__.
 
@@ -38,6 +38,6 @@
 
 12. After all players have either shown their guess or left the round, the __pot__ is distributed to the players in the round. If there are side pots, for each side pot, the player who participates in this side pot and whose guess is closest to the correct answer, is the winner of that pot and gets all the money from that pot. If multiple players share the same guess and this is the closest guess, the pot is split equally amongst these players. If there is only one main pot, this pot is distributed in the same way.
 
-13. After that, the __round is over__. All players who do not have any money left now, are __out of the game__ and cannot participate in further rounds of the game. The anchor button moves to the player next player in the game. A new round begins.
+13. After that, the __round is over__. All players who do not have any money left now, are __out of the game__ and cannot participate in further rounds of the game. The anchor button moves to the next player in the game. A new round begins.
 
-14. The __game is over__ if either all players but one are out or no questions are left. In the first case, the only remaining player is the winner of the game, in the second case, the player with the most money is the winner of the game. (If multiple players have the same amount of money, and no other individual player has more money, those players are all winners of the game.)
+14. The __game is over__ if either all players but one are out of the game or no questions are left. In the first case, the only remaining player is the winner of the game, in the second case, the player with the most money is the winner of the game. If multiple players have the same amount of money, and no other individual player has more money, those players are all winners of the game.
