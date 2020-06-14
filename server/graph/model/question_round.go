@@ -4,7 +4,7 @@ import (
 	"errors"
 	"math"
 	"sort"
-
+	
 	"github.com/alexhans1/certainty_poker/helpers"
 )
 
@@ -75,20 +75,21 @@ func (q *QuestionRound) Rank() [][]string {
 func (q *QuestionRound) DistributePot() int {
 	playerBets := q.playerBets()
 	rank := q.Rank()
-	moneyLeft, _ := helpers.MinValueMapStringInt(playerBets, make([]string, 0))
+	maxBet, _ := helpers.MaxValueMapStringInt(playerBets, make([]string, 0))
 
-	for moneyLeft > 0 {
-		for len(rank[0]) > 0 {
+	for maxBet > 0 {
+		for len(rank[0]) > 0 {  // while still unsatisfied winners left
 			betSize, _ := helpers.MinValueMapStringInt(playerBets, rank[0])
-			potSize := 0
+			sidePot := 0
 
 			// Determine size of side pot
 			for playerID, amount := range playerBets {
-				playerBets[playerID], _ = helpers.MaxInt([]int{amount - betSize, 0})
-				contributionToPot, _ := helpers.MaxInt([]int{amount, betSize})
-				potSize += contributionToPot
+				contributionToSidePot, _ := helpers.MinInt([]int{amount, betSize})
+				playerBets[playerID] = amount - contributionToSidePot
+
+				sidePot += contributionToSidePot
 			}
-			potShare := potSize / len(rank[0])
+			potShare := sidePot / len(rank[0])
 
 			// Distribute money to winners, remove satisfied winners
 			unsatisifiedWinnerIDs := make([]string, 0)
@@ -103,10 +104,9 @@ func (q *QuestionRound) DistributePot() int {
 			rank[0] = unsatisifiedWinnerIDs
 		}
 		rank = rank[1:]
-		moneyLeft, _ = helpers.MinValueMapStringInt(playerBets, make([]string, 0))
-
+		maxBet, _ = helpers.MaxValueMapStringInt(playerBets, make([]string, 0))
 	}
-	return moneyLeft
+	return maxBet
 }
 
 // Fold adds a player to the FoldedPlayerId List of the question round

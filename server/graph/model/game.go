@@ -2,7 +2,6 @@ package model
 
 import (
 	"errors"
-	"math/rand"
 	"strconv"
 
 	"github.com/alexhans1/certainty_poker/helpers"
@@ -11,6 +10,16 @@ import (
 // CurrentQuestionRound returns the last element of the game's QuestionRounds slice
 func (g *Game) CurrentQuestionRound() *QuestionRound {
 	return g.QuestionRounds[len(g.QuestionRounds)-1]
+}
+
+// Questions returns the questions used in this game
+func (g *Game) Questions() []*Question {
+	var questions []*Question
+	for _, q := range g.QuestionRounds {
+		questions = append(questions, q.Question)
+	}
+
+	return questions
 }
 
 // IsFinished returns true if there is only one player left in the game
@@ -43,12 +52,7 @@ func (g *Game) AddNewQuestionRound() {
 	}
 
 	newQuestionRound := &QuestionRound{
-		Question: &Question{
-			ID:       helpers.CreateID(),
-			Question: "Test Question " + strconv.Itoa(newQuestionRoundIndex),
-			Answer:   rand.Float64() * 1000,
-			Hints:    hints,
-		},
+		Question: 			 RandomQuestion(g.Questions()),
 		Guesses:         make([]*Guess, 0),
 		BettingRounds:   make([]*BettingRound, 0),
 		FoldedPlayerIds: make([]string, 0),

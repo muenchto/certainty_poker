@@ -21,7 +21,7 @@ func ContainsString(slice []string, x string) bool {
 	return false
 }
 
-// MaxInt returns largest
+// MaxInt returns largest integer in slice
 func MaxInt(slice []int) (int, error) {
 	if len(slice) == 0 {
 		return 0, errors.New("cannot find maximum of empty slice")
@@ -37,6 +37,22 @@ func MaxInt(slice []int) (int, error) {
 	return max, nil
 }
 
+// MinInt returns smallest integer in slice
+func MinInt(slice []int) (int, error) {
+	if len(slice) == 0 {
+		return 0, errors.New("cannot find minimum of empty slice")
+	}
+	min := slice[0]
+
+	for _, value := range slice {
+		if value < min {
+			min = value
+		}
+	}
+
+	return min, nil
+}
+
 // MinValueMapStringInt returns minimum value of a map string -> int
 func MinValueMapStringInt(m map[string]int, keys []string) (int, error) {
 	first := false
@@ -47,7 +63,7 @@ func MinValueMapStringInt(m map[string]int, keys []string) (int, error) {
 				first = true
 				min = value
 			} else {
-				if value < min {
+				if value > min {
 					min = value
 				}
 			}
@@ -57,6 +73,29 @@ func MinValueMapStringInt(m map[string]int, keys []string) (int, error) {
 		return 0, errors.New("None of the keys found in map")
 	} else {
 		return min, nil
+	}
+}
+
+// MaxValueMapStringInt returns maximum value of a map string -> int
+func MaxValueMapStringInt(m map[string]int, keys []string) (int, error) {
+	first := false
+	max := 0
+	for key, value := range m {
+		if len(keys) == 0 || ContainsString(keys, key) {
+			if first == false {
+				first = true
+				max = value
+			} else {
+				if value > max {
+					max = value
+				}
+			}
+		}
+	}
+	if first == false {
+		return 0, errors.New("None of the keys found in map")
+	} else {
+		return max, nil
 	}
 }
 
