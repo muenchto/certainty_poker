@@ -1,6 +1,10 @@
 package model
 
-import "github.com/umahmood/haversine"
+import {
+	"strings"
+	"github.com/umahmood/haversine"
+	"github.com/alexhans1/certainty_poker/helpers"
+}
 
 // GetGeoDistance returns the distance between the geo guess and answer
 func (g *Guess) GetGeoDistance(a *Answer) float64 {
@@ -9,4 +13,15 @@ func (g *Guess) GetGeoDistance(a *Answer) float64 {
 	_, km := haversine.Distance(guessCoord, answerCoord)
 	g.Difference = &km
 	return km
+}
+
+// GetOrderDeviation returns deviation score between guess and answer order
+func (g *Guess) GetOrderDeviation(a *Answer) int {
+	deviation := 0
+
+	for index, item := range(strings.Split(a.Order, ";")) {
+		deviation += helpers.IntAbs(helpers.SliceStringIndex(g.Guess.Order, item) - index)
+	}
+
+	return deviation
 }
